@@ -35,7 +35,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 
 @Composable
-fun MainScreen() {
+fun MainScreen(viewModel: MainViewModel) {
     Box(
         modifier = Modifier
             .padding(15.dp)
