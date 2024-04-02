@@ -14,5 +14,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application)  {
     val goAddScreen: LiveData<Event<Boolean>>
         get() = _goAddScreen
 
+    fun goMeetAdd() {
+        _goAddScreen.value = Event(true)
+    }
 
 }

@@ -45,6 +45,7 @@ fun MainScreen(viewModel: MainViewModel) {
         FloatingActionButton(
             onClick = {
                 //OnClick Method
+                viewModel.goMeetAdd()
             },
             modifier = Modifier
                 .align(Alignment.BottomEnd)

@@ -1,32 +1,36 @@
-package com.devseok.meeting.view.Edit
+package com.devseok.meeting.view.meet
 
 import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.lifecycle.ViewModelProvider
+import com.devseok.meeting.utils.EventObserver
 
-class MeetEditActivity : ComponentActivity() {
+class MeetAddActivity : ComponentActivity() {
 
-    private lateinit var viewModel: MeetEditViewModel
+    private lateinit var viewModel: MeetAddViewModel
     var context: Context? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         viewModel = ViewModelProvider(this,
-            ViewModelProvider.AndroidViewModelFactory(application))[MeetEditViewModel::class.java]
+            ViewModelProvider.AndroidViewModelFactory(application))[MeetAddViewModel::class.java]
 
         context = this
 
         setContent {
-            MeetEditScreen(viewModel = viewModel)
+            MeetAddScreen(viewModel = viewModel)
         }
 
         initIntent()
     }
 
     private fun initIntent() {
+        viewModel.finishScreen.observe(this, EventObserver {
+            finish()
+        })
 
     }
 }

@@ -1,11 +1,13 @@
 package com.devseok.meeting.view.main
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.lifecycle.ViewModelProvider
 import com.devseok.meeting.utils.EventObserver
+import com.devseok.meeting.view.meet.MeetAddActivity
 
 class MainActivity : ComponentActivity() {
 
@@ -30,6 +32,8 @@ class MainActivity : ComponentActivity() {
     private fun initIntent() {
 
         viewModel.goAddScreen.observe(this, EventObserver {
+            val intent = Intent(this@MainActivity, MeetAddActivity::class.java)
+            startActivity(intent)
 
         })
 

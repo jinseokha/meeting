@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">meeting</string>
+
+    <!-- Screen -->
+    <string name="screen_meet_add">모임 추가</string>
+    <string name="screen_meet_edit">모임 수정</string>
+    <string name="screen_meet">내 모임</string>
 </resources>
